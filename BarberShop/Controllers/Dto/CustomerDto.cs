@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Barber_shop.Models
+namespace BarberShop.Controllers.Dto
 {
-    public class Customer
+    public class CustomerDto
     {
         [Required]
         public byte Id { get; set; }
@@ -17,15 +17,14 @@ namespace Barber_shop.Models
 
         [Required]
         [StringLength(255)]
-        public string  Surname { get; set; }
+        public string Surname { get; set; }
 
         [Required]
-       
+
         public int Number { get; set; }
 
-        public Booking Booking { get; set; }
+        public BookingDto Booking { get; set; }
 
         public byte BookingId { get; set; }
-
     }
 }

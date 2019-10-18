@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Barber_shop.Models;
+using BarberShop.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,7 +28,18 @@ namespace BarberShop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContextPool<BarberShopDbContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("BarberShopDB")));
+            services.AddDbContext<BarberShopDbContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("BarberShopDB")));
+
+            var config = new MapperConfiguration(cfg => {
+               
+                cfg.AddProfile<MappingProfile>();
+            });
+
+            var mapper = config.CreateMapper();
+
+            services.AddSingleton(mapper);
+
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

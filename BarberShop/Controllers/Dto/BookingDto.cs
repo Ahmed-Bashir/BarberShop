@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Barber_shop.Models
+namespace BarberShop.Controllers.Dto
 {
-    public class Booking
+    public class BookingDto
     {
         [Required]
         public byte Id { get; set; }

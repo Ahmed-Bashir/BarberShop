@@ -36,8 +36,9 @@ namespace BarberShop
             });
 
             var mapper = config.CreateMapper();
-
+           
             services.AddSingleton(mapper);
+         
 
            
         }

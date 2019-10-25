@@ -8,6 +8,7 @@ using System.Linq;
 using BarberShop.Controllers.Dto;
 using AutoMapper;
 
+
 namespace BarberShop.Models
 {
     [Route("api/[controller]")]
@@ -15,24 +16,21 @@ namespace BarberShop.Models
     public class CustomersController : ControllerBase
     {
 
-        private BarberShopDbContext _context;
+        private readonly BarberShopDbContext _context;
         private readonly IMapper _mapper;
-        public CustomersController(IMapper mapper)
+        public CustomersController(IMapper mapper, BarberShopDbContext context)
         {
             _mapper = mapper;
-            _context = new BarberShopDbContext();
+            _context = context;
         }
 
         [HttpGet]
-        public IEnumerable<CustomerDto> GetCustomers()
+        [Route("GetCustomers")]
+        public IEnumerable<Customer> GetCustomers()
         {
 
-            if (!ModelState.IsValid)
-            {
-                throw new System.Web.Http.HttpResponseException(HttpStatusCode.NotFound);
-            }
 
-            return _context.Customers.ToList().Select(_mapper.Map<Customer,CustomerDto>);
+            return _context.Customers.ToList();
        }
 
         [HttpGet]

@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BarberShop.Models;
+using Barber_shop.Models;
 
 namespace BarberShop.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly BarberShopDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, BarberShopDbContext context )
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var dbCustomer = _context.Customers.SingleOrDefault(c => c.Id == 1);
+
+            return View(dbCustomer);
         }
 
         public IActionResult Privacy()

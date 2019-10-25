@@ -1,0 +1,13 @@
+1)https://github.com/dotnet/sdk/issues/1321
+2)https://stackoverflow.com/questions/31579229/app-data-directory-in-asp-net5-mvc6
+3)https://www.learnentityframeworkcore.com/efcore/how-to-get
+4)https://stackoverflow.com/questions/56205382/there-are-no-scaffolders-supported-for-this-item-visual-studio-2019
+5)https://docs.microsoft.com/en-gb/ef/core/miscellaneous/cli/dbcontext-creation
+6)https://stackoverflow.com/questions/58233950/the-term-add-migration-is-not-recognized-as-the-name-of-a-cmdlet-visual-stud
+7)https://entityframework.net/knowledge-base/52674430/connectionstring-can-not-be-null-value	
+8) https://stackoverflow.com/questions/38192450/how-to-unapply-a-migration-in-asp-net-core-with-ef-core
+
+1)
+2)
+3)
+4)

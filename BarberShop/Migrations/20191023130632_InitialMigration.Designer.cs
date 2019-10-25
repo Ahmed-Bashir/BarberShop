@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BarberShop.Migrations
 {
     [DbContext(typeof(BarberShopDbContext))]
-    [Migration("20191017151318_addCustomer")]
-    partial class addCustomer
+    [Migration("20191023130632_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,9 @@ namespace BarberShop.Migrations
                     b.Property<byte>("Id")
                         .HasColumnType("tinyint");
 
+                    b.Property<byte?>("CustomerId")
+                        .HasColumnType("tinyint");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
@@ -34,15 +37,14 @@ namespace BarberShop.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Booking");
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Bookings");
                 });
 
             modelBuilder.Entity("Barber_shop.Models.Customer", b =>
                 {
                     b.Property<byte>("Id")
-                        .HasColumnType("tinyint");
-
-                    b.Property<byte>("BookingId")
                         .HasColumnType("tinyint");
 
                     b.Property<string>("Name")
@@ -60,18 +62,14 @@ namespace BarberShop.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BookingId");
-
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("Barber_shop.Models.Customer", b =>
+            modelBuilder.Entity("Barber_shop.Models.Booking", b =>
                 {
-                    b.HasOne("Barber_shop.Models.Booking", "Booking")
+                    b.HasOne("Barber_shop.Models.Customer", "Customer")
                         .WithMany()
-                        .HasForeignKey("BookingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CustomerId");
                 });
 #pragma warning restore 612, 618
         }

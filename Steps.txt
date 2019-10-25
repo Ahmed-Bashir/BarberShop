@@ -1,0 +1,3 @@
+* Test each method in Api from customers prospective - using context is required 
+* Learn how to develop from backend first using rental lecture but for that to happen i need to be able the context. 
+* Every booking we'll have a customer assocaited with it - entity relationship required 

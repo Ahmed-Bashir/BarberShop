@@ -8,12 +8,16 @@ namespace Barber_shop.Models
 {
     public class Booking
     {
-        [Required]
+       
         public byte Id { get; set; }
 
         [Required]
         public DateTime Date { get; set; }
 
         public DateTime Time { get; set; }
+
+        public Customer Customer { get; set; }
+
+        
     }
 }

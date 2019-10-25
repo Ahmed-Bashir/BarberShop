@@ -8,7 +8,7 @@ namespace Barber_shop.Models
 {
     public class Customer
     {
-        [Required]
+        
         public byte Id { get; set; }
 
         [Required]
@@ -23,9 +23,9 @@ namespace Barber_shop.Models
        
         public int Number { get; set; }
 
-        public Booking Booking { get; set; }
+       
 
-        public byte BookingId { get; set; }
+        
 
     }
 }

@@ -1,0 +1,12 @@
+1) Make sure its the correct template when creating the project: .NET CORE & ASP.NET Core 3.0
+2) install efcore sql server and design 
+3) Make sure to rebuild solution each time
+4) Use dbcontext-creation link to set up context 
+5) Use services.AddDbContextPool<BarberShopDbContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("BarberShopDB")));
+   to Link it to database 
+6) create databse and get connection string 
+7) add the connection string to appsettings.Json file:  "BarberShopDB": "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\   \as22814\\source\\repos\\BarberShop\\BarberShop\\wwwroot\\App_Data\\BarberShop.mdf;Integrated Security=True;"
+8) Look for .csproj file to get location and get PMC to point it: cd C:\Users\as22814\source\repos\BarberShop\BarberShop\
+9) Let EF Core create FK
+10) save .cs file if you want to populate a migration 
+  

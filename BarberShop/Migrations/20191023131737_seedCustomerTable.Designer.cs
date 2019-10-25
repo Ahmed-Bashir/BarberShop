@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BarberShop.Migrations
 {
     [DbContext(typeof(BarberShopDbContext))]
-    [Migration("20191014145001_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20191023131737_seedCustomerTable")]
+    partial class seedCustomerTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,9 @@ namespace BarberShop.Migrations
                     b.Property<byte>("Id")
                         .HasColumnType("tinyint");
 
+                    b.Property<byte?>("CustomerId")
+                        .HasColumnType("tinyint");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
@@ -34,7 +37,9 @@ namespace BarberShop.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Booking");
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Bookings");
                 });
 
             modelBuilder.Entity("Barber_shop.Models.Customer", b =>
@@ -42,32 +47,38 @@ namespace BarberShop.Migrations
                     b.Property<byte>("Id")
                         .HasColumnType("tinyint");
 
-                    b.Property<byte>("BookingId")
-                        .HasColumnType("tinyint");
-
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
                     b.Property<string>("Surname")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BookingId");
-
                     b.ToTable("Customers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = (byte)1,
+                            Name = "Ahmed",
+                            Number = 7805,
+                            Surname = "Bashir"
+                        });
                 });
 
-            modelBuilder.Entity("Barber_shop.Models.Customer", b =>
+            modelBuilder.Entity("Barber_shop.Models.Booking", b =>
                 {
-                    b.HasOne("Barber_shop.Models.Booking", "Booking")
+                    b.HasOne("Barber_shop.Models.Customer", "Customer")
                         .WithMany()
-                        .HasForeignKey("BookingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CustomerId");
                 });
 #pragma warning restore 612, 618
         }

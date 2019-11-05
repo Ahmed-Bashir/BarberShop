@@ -23,8 +23,6 @@ namespace BarberShop.Controllers.Dto
 
         public int Number { get; set; }
 
-        public BookingDto Booking { get; set; }
-
-        public byte BookingId { get; set; }
+       
     }
 }

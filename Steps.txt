@@ -1,3 +1,12 @@
 * Test each method in Api from customers prospective - using context is required 
-* Learn how to develop from backend first using rental lecture but for that to happen i need to be able the context. 
+* Learn how to develop from backend first using rental lecture but for that to happen i need to be able to use the context. 
 * Every booking we'll have a customer assocaited with it - entity relationship required 
+
+* solving HTTP Error 502.5 - Process Failure ~ UPDATE VISUAL STUDIO
+* Missing database file that didnt come with clone 3:50pm - 4:05pm ~ create database with correct con string in appsetting and   use "update-database" command 
+* failed to load resource  2 something - 3:33  ~ Use route attributes to set the route of the  method 
+* get api methods working 1:38 ~ nope
+
+* get app up and running without api and watch rest of course as using api means using jquery. Not yet ready!  ~ 
+
+* 

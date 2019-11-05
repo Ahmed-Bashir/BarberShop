@@ -25,15 +25,15 @@ namespace BarberShop.Models
         }
 
         [HttpGet]
-        [Route("GetCustomers")]
-        public IEnumerable<Customer> GetCustomers()
+        public IEnumerable<CustomerDto> GetCustomers()
         {
 
 
-            return _context.Customers.ToList();
+            return _context.Customers.ToList().Select(_mapper.Map<Customer,CustomerDto>);
        }
 
         [HttpGet]
+        [Route("GetCustomers")]
         public CustomerDto GetCustomer(int id)
         {
             var customerInDB = _context.Customers.SingleOrDefault(c => c.Id == id);
@@ -43,12 +43,14 @@ namespace BarberShop.Models
                 throw new System.Web.Http.HttpResponseException(HttpStatusCode.BadRequest);
             }
 
+          
 
-            return _mapper.Map<Customer, CustomerDto>(customerInDB);
+            return _mapper.Map<Customer, CustomerDto>(customerInDB); 
         }
 
 
         [HttpPost]
+        [Route("CreateCustomer")]
         public CustomerDto CreateCustomer(CustomerDto customerDto)
         {
            
@@ -69,6 +71,7 @@ namespace BarberShop.Models
 
 
         [HttpPut]
+        [Route("UpdateCustomer")]
         public CustomerDto UpdateCustomer(int Id, CustomerDto customerDto)
         {
 
@@ -94,6 +97,7 @@ namespace BarberShop.Models
         }
 
         [HttpDelete]
+        [Route("DeleteCustomer")]
         public void DeleteCustomer(int Id)
         {
 

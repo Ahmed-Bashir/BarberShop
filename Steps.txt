@@ -9,4 +9,10 @@
 
 * get app up and running without api and watch rest of course as using api means using jquery. Not yet ready!  ~ 
 
-* 
+
+
+* Entity relationship _/
+* Partial view for nav bar _/
+* Use Scroll spy for a menu type look 
+* add images around menu
+* 1st choose cut. 2nd choose barber. 3rd select date of cut.  

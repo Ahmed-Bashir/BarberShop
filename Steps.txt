@@ -13,6 +13,6 @@
 
 * Entity relationship _/
 * Partial view for nav bar _/
-* Use Scroll spy for a menu type look 
+* Use Scroll spy for a menu type look or basic list 10:13 ~
 * add images around menu
 * 1st choose cut. 2nd choose barber. 3rd select date of cut.  

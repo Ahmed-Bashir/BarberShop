@@ -13,6 +13,10 @@
 
 * Entity relationship _/
 * Partial view for nav bar _/
-* Use Scroll spy for a menu type look or basic list 10:13 ~
+* Use Scroll spy for a menu type look or basic list 10:13 ~ 1:39_/
+* situate footer at the bottom_/
+* spaceout header from content 11:00 ~ 11:10 _/
+* 1st choose cut. 2nd choose barber. 3rd select date of cut._/
+* figure out models
+* get data passed to controller using part html help and raw html
 * add images around menu
-* 1st choose cut. 2nd choose barber. 3rd select date of cut.  

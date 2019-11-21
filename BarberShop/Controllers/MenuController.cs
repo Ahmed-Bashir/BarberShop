@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BarberShop.Controllers
 {
-    public class BookingController : Controller
+    public class MenuController : Controller
     {
         public IActionResult Index()
         {

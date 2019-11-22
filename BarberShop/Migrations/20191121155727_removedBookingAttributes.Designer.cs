@@ -4,14 +4,16 @@ using Barber_shop.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BarberShop.Migrations
 {
     [DbContext(typeof(BarberShopDbContext))]
-    partial class BarberShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191121155727_removedBookingAttributes")]
+    partial class removedBookingAttributes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,46 +21,18 @@ namespace BarberShop.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("BarberShop.Models.Menu", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Cut")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Menu");
-                });
-
             modelBuilder.Entity("Barber_shop.Models.Booking", b =>
                 {
                     b.Property<byte>("Id")
                         .HasColumnType("tinyint");
 
-                    b.Property<byte?>("CustomerId")
-                        .HasColumnType("tinyint");
-
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("MenuId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("Time")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("MenuId");
 
                     b.ToTable("Bookings");
                 });
@@ -93,17 +67,6 @@ namespace BarberShop.Migrations
                             Number = 7805,
                             Surname = "Bashir"
                         });
-                });
-
-            modelBuilder.Entity("Barber_shop.Models.Booking", b =>
-                {
-                    b.HasOne("Barber_shop.Models.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId");
-
-                    b.HasOne("BarberShop.Models.Menu", "Menu")
-                        .WithMany()
-                        .HasForeignKey("MenuId");
                 });
 #pragma warning restore 612, 618
         }

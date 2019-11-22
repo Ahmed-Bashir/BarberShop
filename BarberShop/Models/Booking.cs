@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarberShop.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,6 +19,10 @@ namespace Barber_shop.Models
 
         public Customer Customer { get; set; }
 
-        
+        public Menu Menu { get; set; }
+
+        //watch entity relationship 
+
+
     }
 }

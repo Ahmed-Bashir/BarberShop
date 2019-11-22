@@ -17,6 +17,6 @@
 * situate footer at the bottom_/
 * spaceout header from content 11:00 ~ 11:10 _/
 * 1st choose cut. 2nd choose barber. 3rd select date of cut._/
-* figure out models
+* figure out model relationship
 * get data passed to controller using part html help and raw html
 * add images around menu

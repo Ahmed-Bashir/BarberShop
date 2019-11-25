@@ -6,8 +6,6 @@
 6)https://stackoverflow.com/questions/58233950/the-term-add-migration-is-not-recognized-as-the-name-of-a-cmdlet-visual-stud
 7)https://entityframework.net/knowledge-base/52674430/connectionstring-can-not-be-null-value	
 8) https://stackoverflow.com/questions/38192450/how-to-unapply-a-migration-in-asp-net-core-with-ef-core
-
-1)
-2)
-3)
-4)
+9) if the foreign key repeats in another table its due to the fact that the name and type has to mach the parent table properly.
+10) if you get this error, "NullReferenceException: Object reference not set to an instance of an object." pass data to it through controller.
+11) if the table doesnt show up through intelli sense when using context, add it to DB.

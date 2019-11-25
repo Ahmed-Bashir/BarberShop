@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 
 namespace BarberShop.Models
 {
-    public class Menu
+    public class Cut
     {
         public int Id { get; set; }
 
-        public string Cut { get; set; }
+        public string Cuts { get; set; }
 
         public int Price { get; set; }
+
     }
 }

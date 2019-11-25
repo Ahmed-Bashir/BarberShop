@@ -9,7 +9,7 @@ namespace Barber_shop.Models
     public class Customer
     {
         
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(255)]

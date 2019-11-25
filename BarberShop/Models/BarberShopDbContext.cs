@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BarberShop.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Barber_shop.Models
 {
@@ -14,7 +15,15 @@ namespace Barber_shop.Models
 
 
         public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Barber> Barbers { get; set; }
+
+        public DbSet<Cut> Cuts { get; set; }
+
         public DbSet<Booking> Bookings { get; set; }
+
+
+        public DbSet<Order> Order { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

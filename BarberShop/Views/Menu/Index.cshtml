@@ -1,4 +1,4 @@
-﻿
+﻿@model BarberShop.Models.MenuViewModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -22,7 +22,7 @@
                 <div class="input-group">
                     <div class="input-group-prepend ">
                         <span class="input-group-text">Barber</span>
-
+                      @Html.DropDownList("Blah",new SelectList(Model.Barbers,"Id","Name"),"Select Barber", new { @class = "form-control"})
                     </div>
 
                     <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">

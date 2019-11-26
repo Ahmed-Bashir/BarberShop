@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BarberShop.Migrations
 {
     [DbContext(typeof(BarberShopDbContext))]
-    [Migration("20191125143406_InitialMigration")]
+    [Migration("20191126135103_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,7 +39,7 @@ namespace BarberShop.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Barber");
+                    b.ToTable("Barbers");
                 });
 
             modelBuilder.Entity("BarberShop.Models.Cut", b =>
@@ -57,7 +57,7 @@ namespace BarberShop.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cut");
+                    b.ToTable("Cuts");
                 });
 
             modelBuilder.Entity("BarberShop.Models.Order", b =>
@@ -107,7 +107,7 @@ namespace BarberShop.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Booking");
+                    b.ToTable("Bookings");
                 });
 
             modelBuilder.Entity("Barber_shop.Models.Customer", b =>

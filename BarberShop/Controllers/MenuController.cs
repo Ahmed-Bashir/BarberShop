@@ -32,5 +32,13 @@ namespace BarberShop.Controllers
                 
                 return View(viewModel);
         }
+        // rethink database design 
+        [HttpPost]
+        public IActionResult Create(MenuViewModel viewModel)
+        {
+         var barber = _context.Barbers.SingleOrDefault(b => b.Id == viewModel.Barbers.)
+
+            return null;
+        }
     }
 }

@@ -3,49 +3,51 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
- @*//Regular Cut - £15
-                                 //            Childrens Cut - £6
-                                 //             Beard Trim £5
-                                 //           Mustache Trim £3
-                                 //              Shape Ups £3*@
 
-<div class="card mt-5">
-    <div class="card-body">
-        <h5 class="card-title mb-5 text-center">Menu</h5>
-    
-        <div class="row">
-            <div class="col-4">
+@using (Html.BeginForm("Create", "Menu"))
+{
 
-            </div>
-            <div class="col-5">
+    <div class="card mt-5">
+        <div class="card-body">
+            <h5 class="card-title mb-5 text-center">Menu</h5>
 
-                <div class="input-group">
-                    <div class="input-group-prepend ">
-                        <span class="input-group-text">Barber</span>
-                      @Html.DropDownList("Blah",new SelectList(Model.Barbers,"Id","Name"),"Select Barber", new { @class = "form-control"})
-                    </div>
+            <div class="row">
+                <div class="col-4">
 
-                    <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
                 </div>
-                <div class="input-group mt-5 mb-5 ">
-                    <div class="input-group-prepend ">
-                        <span class="input-group-text">Cut</span>
+                <div class="col-5">
 
+                    <div class="input-group">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text">Barber</span>
+                        </div>
+                        @Html.DropDownListFor(m => m.Orders.BarbersId, new SelectList(Model.Barbers, "Id", "Name"), "Select Barber", new { @class = "form-control" })
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text">Cuts</span>
+                        </div>
+                        @Html.DropDownListFor(m => m.Orders.CutsId, new SelectList(Model.Cuts, "Id", "Cuts"), "Select Cut", new { @class = "form-control" })
                     </div>
 
 
-                    <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-                </div>
-
-                <div class="input-group ">
-                    <div class="input-group-prepend ">
-                        <span class="input-group-text">Date</span>
-
+                    <div class="input-group">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text">Date</span>
+                        </div>
+                        <input id="Date" name="Date" class="form-control" type="date" />
                     </div>
-
-
-                    <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
                 </div>
             </div>
         </div><!--Tab content-->
-                </div><!--col-8-->
+    </div>
+
+
+
+
+
+
+
+
+}

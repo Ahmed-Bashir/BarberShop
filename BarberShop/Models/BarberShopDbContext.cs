@@ -23,7 +23,7 @@ namespace Barber_shop.Models
         public DbSet<Booking> Bookings { get; set; }
 
 
-        public DbSet<Order> Order { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

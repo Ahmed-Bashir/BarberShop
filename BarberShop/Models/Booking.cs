@@ -15,7 +15,7 @@ namespace Barber_shop.Models
         [Required]
         public DateTime Date { get; set; }
 
-        public DateTime Time { get; set; }
+        public DateTime? Time { get; set; }
 
 
 

@@ -15,6 +15,5 @@ namespace BarberShop.Models
 
         public Booking Bookings { get; set; }
 
-        public Order Orders { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace BarberShop.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Barber",
+                name: "Barbers",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -19,11 +19,11 @@ namespace BarberShop.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Barber", x => x.Id);
+                    table.PrimaryKey("PK_Barbers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Booking",
+                name: "Bookings",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -33,7 +33,7 @@ namespace BarberShop.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Booking", x => x.Id);
+                    table.PrimaryKey("PK_Bookings", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -52,7 +52,7 @@ namespace BarberShop.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cut",
+                name: "Cuts",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -62,7 +62,7 @@ namespace BarberShop.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cut", x => x.Id);
+                    table.PrimaryKey("PK_Cuts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -80,15 +80,15 @@ namespace BarberShop.Migrations
                 {
                     table.PrimaryKey("PK_Order", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Order_Barber_BarbersId",
+                        name: "FK_Order_Barbers_BarbersId",
                         column: x => x.BarbersId,
-                        principalTable: "Barber",
+                        principalTable: "Barbers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Order_Booking_BookingsId",
+                        name: "FK_Order_Bookings_BookingsId",
                         column: x => x.BookingsId,
-                        principalTable: "Booking",
+                        principalTable: "Bookings",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -98,9 +98,9 @@ namespace BarberShop.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Order_Cut_CutsId",
+                        name: "FK_Order_Cuts_CutsId",
                         column: x => x.CutsId,
-                        principalTable: "Cut",
+                        principalTable: "Cuts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -137,16 +137,16 @@ namespace BarberShop.Migrations
                 name: "Order");
 
             migrationBuilder.DropTable(
-                name: "Barber");
+                name: "Barbers");
 
             migrationBuilder.DropTable(
-                name: "Booking");
+                name: "Bookings");
 
             migrationBuilder.DropTable(
                 name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "Cut");
+                name: "Cuts");
         }
     }
 }

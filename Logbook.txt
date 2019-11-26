@@ -1,11 +1,14 @@
-1)https://github.com/dotnet/sdk/issues/1321
-2)https://stackoverflow.com/questions/31579229/app-data-directory-in-asp-net5-mvc6
-3)https://www.learnentityframeworkcore.com/efcore/how-to-get
-4)https://stackoverflow.com/questions/56205382/there-are-no-scaffolders-supported-for-this-item-visual-studio-2019
-5)https://docs.microsoft.com/en-gb/ef/core/miscellaneous/cli/dbcontext-creation
-6)https://stackoverflow.com/questions/58233950/the-term-add-migration-is-not-recognized-as-the-name-of-a-cmdlet-visual-stud
-7)https://entityframework.net/knowledge-base/52674430/connectionstring-can-not-be-null-value	
-8) https://stackoverflow.com/questions/38192450/how-to-unapply-a-migration-in-asp-net-core-with-ef-core
-9) if the foreign key repeats in another table its due to the fact that the name and type has to mach the parent table properly.
-10) if you get this error, "NullReferenceException: Object reference not set to an instance of an object." pass data to it through controller.
-11) if the table doesnt show up through intelli sense when using context, add it to DB.
+* https://github.com/dotnet/sdk/issues/1321
+* https://stackoverflow.com/questions/31579229/app-data-directory-in-asp-net5-mvc6
+* https://www.learnentityframeworkcore.com/efcore/how-to-get
+* https://stackoverflow.com/questions/56205382/there-are-no-scaffolders-supported-for-this-item-visual-studio-2019
+* https://docs.microsoft.com/en-gb/ef/core/miscellaneous/cli/dbcontext-creation
+* https://stackoverflow.com/questions/58233950/the-term-add-migration-is-not-recognized-as-the-name-of-a-cmdlet-visual-stud
+* https://entityframework.net/knowledge-base/52674430/connectionstring-can-not-be-null-value	
+* https://stackoverflow.com/questions/38192450/how-to-unapply-a-migration-in-asp-net-core-with-ef-core
+* if the foreign key repeats in another table its due to the fact that the name and type has to mach the parent table properly.
+* if you get this error, "NullReferenceException: Object reference not set to an instance of an object." pass data to it through controller.
+* if the table doesnt show up through intelli sense when using context, add it to DBcontext.
+* https://entityframeworkcore.com/knowledge-base/43855004/sqlexception--invalid-object-name--movie (Name that pops up on intelisense through       context doenst match the table name in the database. Recreate database again by deleting migrations and database table and then stating another
+  migrations. This could be due to a name change after the fact).
+* https://www.codeproject.com/Questions/1183524/Dropdownlistfor-throws-object-reference-not-set-to

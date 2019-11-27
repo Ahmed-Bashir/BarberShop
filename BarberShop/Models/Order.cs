@@ -9,8 +9,6 @@ namespace BarberShop.Models
     public class Order
     {
         public int Id { get; set; }
-        public Booking Bookings { get; set; }
-        public int BookingsId { get; set; }
         public Customer Customers { get; set; }
         public int CustomersId { get; set; }
         public Barber Barbers { get; set; }

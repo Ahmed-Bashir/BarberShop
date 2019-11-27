@@ -25,8 +25,7 @@ namespace BarberShop.Controllers
             {
                 Barbers = barbers,
                 Cuts = cuts,
-                Bookings = bookings
-
+               
             };
 
                 
@@ -34,11 +33,31 @@ namespace BarberShop.Controllers
         }
         // rethink database design 
         [HttpPost]
-        public IActionResult Create(MenuViewModel viewModel)
+        public IActionResult Create(Order orders, DateTime dateOfBooking)
         {
-         var barber = _context.Barbers.SingleOrDefault(b => b.Id == viewModel.Barbers.)
+            var bookingDB = _context.Bookings.FirstOrDefault(b => b.CustomersId == 1);
+            var booking = new Booking()
+            {
+                Date = dateOfBooking,
+                CustomersId = 1,
 
-            return null;
+
+            };
+
+            if (bookingDB == null)
+            {
+                _context.Add(booking);
+                _context.SaveChanges();
+            }
+            orders.CustomersId = 1;
+            _context.Add(orders);
+            _context.SaveChanges();
+
+           
+
+         
+
+            return RedirectToAction("Index","Menu");
         }
     }
-}
+}                       

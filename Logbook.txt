@@ -12,3 +12,9 @@
 * https://entityframeworkcore.com/knowledge-base/43855004/sqlexception--invalid-object-name--movie (Name that pops up on intelisense through       context doenst match the table name in the database. Recreate database again by deleting migrations and database table and then stating another
   migrations. This could be due to a name change after the fact).
 * https://www.codeproject.com/Questions/1183524/Dropdownlistfor-throws-object-reference-not-set-to
+* https://stackoverflow.com/questions/41711772/entity-framework-core-cascade-delete-one-to-many-relationship
+*    modelBuilder.Entity<Booking>()
+        .HasOne(e => e.Customers)
+        .WithMany()
+        .OnDelete(DeleteBehavior.Restrict);
+*https://stackoverflow.com/questions/15021257/invalidoperationexception-sequence-contains-more-than-one-element

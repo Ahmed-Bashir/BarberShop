@@ -17,7 +17,9 @@ namespace Barber_shop.Models
 
         public DateTime? Time { get; set; }
 
+        public Customer Customers { get; set; }
 
+        public int CustomersId { get; set; }
 
     }
 }

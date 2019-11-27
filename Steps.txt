@@ -18,6 +18,10 @@
 * spaceout header from content 11:00 ~ 11:10 _/
 * 1st choose cut. 2nd choose barber. 3rd select date of cut._/
 * figure out model relationship _/
-* create dropdowns
-* get data passed to controller using part html help and raw html
+* create dropdowns _/
+* figure out the manner in which the data will be saved_/
+* the customers id is used to reference booking and order. Find a way to get and pass this data to controller.
+* add validations 
+* SqlException: Invalid object name_/
+* get data passed to controller using part html help and raw html_/
 * add images around menu

@@ -4,14 +4,16 @@ using Barber_shop.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BarberShop.Migrations
 {
     [DbContext(typeof(BarberShopDbContext))]
-    partial class BarberShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191127142952_addCustomerFKeyToBooking")]
+    partial class addCustomerFKeyToBooking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,6 +70,9 @@ namespace BarberShop.Migrations
                     b.Property<int>("BarbersId")
                         .HasColumnType("int");
 
+                    b.Property<int>("BookingsId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CustomersId")
                         .HasColumnType("int");
 
@@ -77,6 +82,8 @@ namespace BarberShop.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BarbersId");
+
+                    b.HasIndex("BookingsId");
 
                     b.HasIndex("CustomersId");
 
@@ -147,6 +154,12 @@ namespace BarberShop.Migrations
                     b.HasOne("BarberShop.Models.Barber", "Barbers")
                         .WithMany()
                         .HasForeignKey("BarbersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Barber_shop.Models.Booking", "Bookings")
+                        .WithMany()
+                        .HasForeignKey("BookingsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

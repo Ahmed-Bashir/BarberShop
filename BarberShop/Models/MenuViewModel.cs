@@ -13,7 +13,6 @@ namespace BarberShop.Models
 
         public IEnumerable<Cut> Cuts { get; set; }
 
-        public Booking Bookings { get; set; }
-
+        public Order Orders { get; set; }
     }
 }

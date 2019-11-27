@@ -35,6 +35,11 @@ namespace Barber_shop.Models
                 Number = 07805
 
             });
+
+            modelBuilder.Entity<Booking>()
+        .HasOne(e => e.Customers)
+        .WithMany()
+        .OnDelete(DeleteBehavior.Restrict);
         }
 
     }

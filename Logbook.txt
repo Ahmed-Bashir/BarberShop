@@ -17,4 +17,7 @@
         .HasOne(e => e.Customers)
         .WithMany()
         .OnDelete(DeleteBehavior.Restrict);
-*https://stackoverflow.com/questions/15021257/invalidoperationexception-sequence-contains-more-than-one-element
+* https://stackoverflow.com/questions/15021257/invalidoperationexception-sequence-contains-more-than-one-element
+* https://stackoverflow.com/questions/13443149/passing-data-from-form-without-html-helpers (passing data to controller using raw HTML)
+
+

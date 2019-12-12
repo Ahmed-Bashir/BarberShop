@@ -20,6 +20,7 @@
 * figure out model relationship _/
 * create dropdowns _/
 * figure out the manner in which the data will be saved_/
+* Use HTML Tag helper _/
 * the customers id is used to reference booking and order. Find a way to get and pass this data to controller.
 * add validations 
 * SqlException: Invalid object name_/

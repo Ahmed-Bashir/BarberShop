@@ -33,12 +33,12 @@ namespace BarberShop.Controllers
         }
         // rethink database design 
         [HttpPost]
-        public IActionResult Create(Order orders, DateTime dateOfBooking)
+        public IActionResult Create(Booking booking, Order orders)
         {
             var bookingDB = _context.Bookings.FirstOrDefault(b => b.CustomersId == 1);
-            var booking = new Booking()
+            var bookings = new Booking()
             {
-                Date = dateOfBooking,
+                Date = booking.Date,
                 CustomersId = 1,
 
 
@@ -46,18 +46,21 @@ namespace BarberShop.Controllers
 
             if (bookingDB == null)
             {
-                _context.Add(booking);
+                _context.Add(bookings);
                 _context.SaveChanges();
+
+                orders.CustomersId = 1;
+
+
+                _context.Add(orders);
+                _context.SaveChanges();
+
             }
-            orders.CustomersId = 1;
-            _context.Add(orders);
-            _context.SaveChanges();
 
-           
 
-         
 
-            return RedirectToAction("Index","Menu");
+            return RedirectToAction("Index", "Home");
         }
+        
     }
 }                       

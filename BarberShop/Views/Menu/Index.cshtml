@@ -1,4 +1,5 @@
 ﻿@model BarberShop.Models.MenuViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -21,14 +22,14 @@
                         <div class="input-group-prepend ">
                             <span class="input-group-text">Barber</span>
                         </div>
-                        @Html.DropDownListFor(m => m.Orders.BarbersId, new SelectList(Model.Barbers, "Id", "Name"), "Select Barber", new { @class = "form-control" })
+                        <select asp-for="@Model.Orders.BarbersId" asp-items="@(new SelectList(Model.Barbers,"Id","Name"))" class="form-control"> <option value="">Select a Barber</option> </select>
                     </div>
 
                     <div class="input-group">
                         <div class="input-group-prepend ">
                             <span class="input-group-text">Cuts</span>
                         </div>
-                        @Html.DropDownListFor(m => m.Orders.CutsId, new SelectList(Model.Cuts, "Id", "Cuts"), "Select Cut", new { @class = "form-control" })
+                        <select asp-for="@Model.Orders.CutsId" asp-items="@(new SelectList(Model.Cuts,"Id","Cuts"))" class="form-control">  <option value="">Select a Cut</option> </select>
                     </div>
 
 
@@ -36,7 +37,7 @@
                         <div class="input-group-prepend ">
                             <span class="input-group-text">Date</span>
                         </div>
-                        <input id="dateOfBooking" name="dateOfBooking" class="form-control" type="date" />
+                        <input asp-for="@Model.Booking.Date" asp-action="Create" asp-controller="Menu"  class="form-control" type="date" />
                     </div>
                 </div>
             </div>
@@ -45,7 +46,7 @@
 
 
 
-    <button type="submit" class="btn btn-primary">Primary</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
 
 
 

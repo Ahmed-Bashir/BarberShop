@@ -10,23 +10,29 @@
 * get app up and running without api and watch rest of course as using api means using jquery. Not yet ready!  ~ 
 
 
+----------------(All pages)-----------------------
 
-* Entity relationship _/
 * Partial view for nav bar _/
-* Use Scroll spy for a menu type look or basic list 10:13 ~ 1:39_/
 * situate footer at the bottom_/
 * spaceout header from content 11:00 ~ 11:10 _/
-* 1st choose cut. 2nd choose barber. 3rd select date of cut._/
-* figure out model relationship _/
-* create dropdowns _/
 * figure out the manner in which the data will be saved_/
 * Use HTML Tag helper _/
 * SqlException: Invalid object name_/
 * get data passed to controller using part html help and raw html_/
-* go into more detial on barber "shop location, experince, language and rating"
-* go into more detial for cut "top level 3 side leve 1.5"
+----------------(Database page)-----------------------
+* Entity relationship _/
+* figure out model relationship _/
+----------------(Registration page)-----------------------
 * the customers id is used to reference booking and order. Find a way to get and pass this data to controller. "registration"
 * add validations 
+-------------------(User page)-----------------------
+* go into more detial on barber "shop location, experince, language and rating"
+* go into more detial for cut "top level 3 side leve 1.5"
 * add images around menu
+* selection panel in the middle and panel to the side for users profile, contact detials and so on.
+* barber shop logo above middle panel
+* create dropdowns _/ 
+* 1st choose cut. 2nd choose barber. 3rd select date of cut._/
+-------------------(Home page)-----------------------
 * one huge background image with logo in the middle
 * all sylist section  

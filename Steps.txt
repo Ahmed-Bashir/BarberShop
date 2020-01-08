@@ -27,7 +27,7 @@
 * add validations 
 -------------------(User page)-----------------------
 * go into more detial on barber "shop location, experince, language and rating"
-* go into more detial for cut "top level 3 side leve 1.5"
+* go into more detial for cut "top level 3 side level 1.5"
 * add images around menu
 * selection panel in the middle and panel to the side for users profile, contact detials and so on.
 * barber shop logo above middle panel

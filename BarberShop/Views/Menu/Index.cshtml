@@ -24,30 +24,35 @@
 
                     <div class="tab-pane fade show active" id="nav-Barber" role="tabpanel" aria-labelledby="nav-home-Barber">
 
-                        <div class="card mt-5">
+                        <div class="row justify-content-center mt-lg-5">
 
-                            <div class="card-body">
 
-                                <div class="col-5">
+                            <div class="card" style="width: 18rem;">
+                                <img src="~/Images/images (1).png" class="card-img-top" alt="Responsive image">
 
-                                    <div class="input-group  mb-2">
+                                <div class="card-body">
+
+                                    <h5 class="card-title text-center">Choose your Barber </h5>
+
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                    <div class="input-group">
                                         <div class="input-group-prepend ">
-                                            <span class="input-group-text">Barber</span>
+                                            <span class="input-group-text">Barbers</span>
                                         </div>
                                         <select asp-for="@Model.Orders.BarbersId" asp-items="@(new SelectList(Model.Barbers, "Id", "Name"))" class="form-control"> <option value="">Select a Barber</option> </select>
                                     </div>
+                                </div><!--card-body-->
+                            </div><!--Barber card-->
 
-                                </div><!--col-5-->
-
-                            </div><!--card-body-->
-
-                        </div><!--card-->
+                        </div>
+                      
 
                     </div><!--Barber panel-->
 
 
 
-                
+
                     <div class="tab-pane fade" id="nav-Cut" role="tabpanel" aria-labelledby="nav-Cut-tab">
 
                         <div class="card mt-5">
@@ -89,6 +94,7 @@
                                 </div>
 
                             </div>
+
                             <div class="col-5">
                                 <div class="input-group  mb-2">
                                     <div class="input-group-prepend ">
@@ -97,6 +103,7 @@
                                     <input asp-for="@Model.Booking.Date" asp-action="Create" asp-controller="Menu" class="form-control" type="datetime" />
                                 </div>
                             </div>
+
                             <div class="col text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>

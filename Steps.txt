@@ -26,6 +26,8 @@
 * the customers id is used to reference booking and order. Find a way to get and pass this data to controller. "registration"
 * add validations 
 -------------------(User page)-----------------------
+* image under huge book button that goes down and reveal the cards
+* have each card apear left to right_/ 
 * go into more detial on barber "shop location, experince, language and rating"
 * go into more detial for cut "top level 3 side level 1.5"
 * add images around menu

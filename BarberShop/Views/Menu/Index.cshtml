@@ -9,25 +9,59 @@
 {
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-10">
-                <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-Barber-tab" data-toggle="tab" href="#nav-Barber" role="tab" aria-controls="nav-home" aria-selected="true">Barber</a>
-                        <a class="nav-item nav-link" id="nav-Cut-tab" data-toggle="tab" href="#nav-Cut" role="tab" aria-controls="nav-profile" aria-selected="false">Cut</a>
-                        <a class="nav-item nav-link" id="nav-Ticket-tab" data-toggle="tab" href="#nav-Ticket" role="tab" aria-controls="nav-contact" aria-selected="false">Ticket</a>
-                    </div>
-                </nav><!--Nav bar links-->
+    <div class="container-fluid">
 
-                <div class="tab-content" id="nav-tabContent">
+        <div class="row justify-content-center">
+           
+            <div class="col-7 ml-auto">
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#barber" aria-expanded="false" aria-controls="Book">Book</button>
+            </div>
 
-                    <div class="tab-pane fade show active" id="nav-Barber" role="tabpanel" aria-labelledby="nav-home-Barber">
+        </div>
 
-                        <div class="row justify-content-center mt-lg-5">
+        </div>
 
+    <div class="collapse multi-collapse" id="barber">
+        <div class="container-fluid">
 
-                            <div class="card" style="width: 18rem;">
+            <div class="row">
+                
+                <div class="col-4">
+                    <div class="card m-md-5" style="width: 18rem;">
+                        <img src="~/Images/images (1).png" class="card-img-top" alt="Responsive image">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title text-center">Choose your Barber </h5>
+
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text">Barbers</span>
+                                </div>
+                                <select asp-for="@Model.Orders.BarbersId" asp-items="@(new SelectList(Model.Barbers, "Id", "Name"))" class="form-control"> <option value="">Select a Barber</option> </select>
+                            </div>
+
+                            <div class="row justify-content-center">
+
+                                <div class="col-8 ml-auto mt-3">
+                                    <p>
+                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#cut" aria-expanded="false" aria-controls="Barber">Next</button>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            
+
+                        </div><!--card-body-->
+                    </div><!--Barber card-->
+                </div>
+
+                    <div class="col-4">
+                        <div class="collapse multi-collapse" id="cut">
+                            <div class="card m-md-5" style="width: 18rem;">
                                 <img src="~/Images/images (1).png" class="card-img-top" alt="Responsive image">
 
                                 <div class="card-body">
@@ -36,53 +70,39 @@
 
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
-                                    <div class="input-group">
-                                        <div class="input-group-prepend ">
-                                            <span class="input-group-text">Barbers</span>
-                                        </div>
-                                        <select asp-for="@Model.Orders.BarbersId" asp-items="@(new SelectList(Model.Barbers, "Id", "Name"))" class="form-control"> <option value="">Select a Barber</option> </select>
-                                    </div>
-                                </div><!--card-body-->
-                            </div><!--Barber card-->
-
-                        </div>
-                      
-
-                    </div><!--Barber panel-->
-
-
-
-
-                    <div class="tab-pane fade" id="nav-Cut" role="tabpanel" aria-labelledby="nav-Cut-tab">
-
-                        <div class="card mt-5">
-
-                            <div class="card-body">
-
-                                <h5 class="card-title mb-5 text-center">Menu</h5>
-
-                                <div class="col-5">
-
                                     <div class="input-group  mb-2">
                                         <div class="input-group-prepend ">
                                             <span class="input-group-text">Cuts</span>
                                         </div>
                                         <select asp-for="@Model.Orders.CutsId" asp-items="@(new SelectList(Model.Cuts, "Id", "Cuts"))" class="form-control">  <option value="">Select a Cut</option> </select>
-                                    </div><!--col-5-->
+                                    </div>
+                                    <div class="col-8 mx-auto mt-3">
+                                        <p>
+                                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ticket" aria-expanded="false" aria-controls="cut">Next</button>
+                                        </p>
 
+                                        </div>
+
+                                    
                                 </div><!--card-body-->
-
-                            </div><!-- card-->
-
-                        </div><!--Cut panel-->
-
+                            </div><!--Barber card-->
+                        </div>
                     </div>
 
-                    <div class="tab-pane fade" id="nav-Ticket" role="tabpanel" aria-labelledby="nav-Ticket-tab">
-                        <div class="card mt-5">
-                            <div class="card-body">
-                                <h5 class="card-title mb-5 text-center">Menu</h5>
-                                <div class="col-5">
+
+                    <div class="col-4">
+
+                        <div class="collapse multi-collapse" id="ticket">
+
+                            <div class="card m-md-5" style="width: 18rem;">
+                                <img src="~/Images/images (1).png" class="card-img-top" alt="Responsive image">
+
+                                <div class="card-body">
+
+                                    <h5 class="card-title text-center">Choose your Barber </h5>
+
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
                                     <div class="input-group  mb-2">
                                         <div class="input-group-prepend ">
                                             <span class="input-group-text">Time</span>
@@ -91,37 +111,23 @@
                                         <input id='form_datetime' asp-for="@Model.Booking.Time" asp-action="Create" asp-controller="Menu" class="form-control" />
 
                                     </div>
-                                </div>
 
-                            </div>
-
-                            <div class="col-5">
-                                <div class="input-group  mb-2">
-                                    <div class="input-group-prepend ">
-                                        <span class="input-group-text">Date</span>
+                                    <div class="input-group  mb-2">
+                                        <div class="input-group-prepend ">
+                                            <span class="input-group-text">Date</span>
+                                        </div>
+                                        <input asp-for="@Model.Booking.Date" asp-action="Create" asp-controller="Menu" class="form-control" type="datetime" />
                                     </div>
-                                    <input asp-for="@Model.Booking.Date" asp-action="Create" asp-controller="Menu" class="form-control" type="datetime" />
-                                </div>
-                            </div>
 
-                            <div class="col text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
+                                </div><!--card-body-->
+                            </div><!--Barber card-->
+                        </div><!--collapse-->
+                    </div>
 
-
-
-                    </div><!--Ticket panel-->
-                </div><!--content tab-->
-            </div><!--col-10-->
+                </div><!--row-->
+            </div>
 
 
-        </div><!--row-->
-
-    </div><!--container-->
-
-
-
-
-
+        </div><!--container-->
+    
 }

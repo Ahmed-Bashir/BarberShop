@@ -38,5 +38,7 @@
                                 }
                             </select>
 * https://stackoverflow.com/questions/315301/how-to-list-all-month-names-e-g-for-a-combo
+* https://stackoverflow.com/questions/4832468/getting-number-of-days-in-a-month/4832481
+* https://www.w3schools.com/asp/webpages_razor.asp
 
 

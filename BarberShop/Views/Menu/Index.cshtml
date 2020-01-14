@@ -43,7 +43,7 @@
                             </select>*@
 
 
-                                <select asp-for="@Model.Orders.BarbersId" class="form-control">
+                                <select  asp-for="@Model.Orders.BarbersId" class="form-control">
 
                                     <option value="">Select a Barber</option>
 
@@ -92,7 +92,7 @@
                                         <span class="input-group-text">Time</span>
                                     </div>
 
-                                    <select asp-for="@Model.Booking" class="form-control">
+                                    <select id="month" asp-for="@Model.Booking" class="form-control">
 
                                         <option value="">Select a Month</option>
 
@@ -101,13 +101,16 @@
                                             <option value="">@month</option>
                                         }
 
+                                        @{Html.DropDownListFor}
+
                                     </select>
 
                                     <select asp-for="@Model.Booking" class="form-control">
 
+                                        
                                         <option value="">Select a day</option>
 
-                                       @*@Model.DaysInMonth()*@
+                                       
 
                                     </select>
 

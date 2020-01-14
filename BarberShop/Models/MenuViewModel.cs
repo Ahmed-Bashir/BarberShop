@@ -16,5 +16,10 @@ namespace BarberShop.Models
         public Order Orders { get; set; }
 
         public Booking Booking { get; set; }
+
+        public List<string> Months { get; set; }
+
+        public DateTime DaysInMonth { get; set; }
+
     }
 }

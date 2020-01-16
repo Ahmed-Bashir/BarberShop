@@ -7,7 +7,7 @@
 
 @using (Html.BeginForm("Create", "Menu"))
 {
-
+   
     <div class="container-fluid">
 
         <div class="row justify-content-center">
@@ -51,7 +51,7 @@
                                     {
                                         <option value="@barber.Id">@barber.Name </option>
 
-
+                                     
                                     }
                                 </select>
 
@@ -92,27 +92,34 @@
                                         <span class="input-group-text">Time</span>
                                     </div>
 
-                                    <select id="month" asp-for="@Model.Booking" class="form-control">
-
+                                    @{ var count = 0; }
+                                    <select id="month" class="form-control">
                                         <option value="">Select a Month</option>
 
-                                        @foreach (var month in Model.Months)
+                                        @for (int i = 0; i < Model.Calendar.Months.Count; i++)
                                         {
-                                            <option value="">@month</option>
+                                            <option value="">@Model.Calendar.Months[1]</option>
+                                            count = i;
                                         }
 
-                                        @{Html.DropDownListFor}
 
                                     </select>
 
-                                    <select asp-for="@Model.Booking" class="form-control">
 
-                                        
+                                    <select id="month" class="form-control">
                                         <option value="">Select a day</option>
 
-                                       
+                                        @for (int i = 0; i < Model.Calendar.Days.Count; i++)
+                                        {
+                                            <option value="">@Model.Calendar.Days[i]</option>
+                                            count = i;
+                                        }
+
 
                                     </select>
+
+
+
 
                                 </div>
 

@@ -22,8 +22,9 @@ namespace BarberShop.Controllers
         {
             var barbers = _context.Barbers.ToList();
             var cuts = _context.Cuts.ToList();
-            List<string> months = DateTimeFormatInfo.CurrentInfo.MonthNames.ToList();
            
+            
+          
 
             var bookings = new Booking();
 
@@ -31,8 +32,8 @@ namespace BarberShop.Controllers
             var viewModel = new MenuViewModel()
             {
                 Barbers = barbers,
-                Cuts = cuts,
-                Months = months
+                Cuts = cuts
+               
             };
 
                 
@@ -43,11 +44,12 @@ namespace BarberShop.Controllers
         public IActionResult Create(Booking booking, Order orders)
         {
             var bookingDB = _context.Bookings.FirstOrDefault(b => b.CustomersId == 1);
+            
             var bookings = new Booking()
             {
                 Date = booking.Date,
                 CustomersId = 1,
-
+                
 
             };
 
@@ -66,7 +68,7 @@ namespace BarberShop.Controllers
 
 
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Menu");
         }
         
     }

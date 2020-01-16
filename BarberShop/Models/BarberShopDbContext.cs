@@ -25,6 +25,8 @@ namespace Barber_shop.Models
 
         public DbSet<Order> Orders { get; set; }
 
+       
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>().HasData(new Customer()

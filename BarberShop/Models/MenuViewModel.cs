@@ -17,9 +17,8 @@ namespace BarberShop.Models
 
         public Booking Booking { get; set; }
 
-        public List<string> Months { get; set; }
-
-        public DateTime DaysInMonth { get; set; }
+        public Calendar Calendar { get; set; }
+         
 
     }
 }

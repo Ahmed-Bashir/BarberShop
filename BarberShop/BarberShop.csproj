@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20191127140856_addCustomerFKeyToBooking.cs" />
     <Compile Remove="Migrations\20191127140856_addCustomerFKeyToBooking.Designer.cs" />
+    <Compile Remove="Migrations\20200116132319_addCustomerTable.cs" />
+    <Compile Remove="Migrations\20200116132319_addCustomerTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

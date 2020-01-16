@@ -7,8 +7,10 @@
 * failed to load resource  2 something - 3:33  ~ Use route attributes to set the route of the  method 
 * get api methods working 1:38 ~ nope
 
-* get app up and running without api and watch rest of course as using api means using jquery. Not yet ready!  ~ 
-
+* get app up and running without api and watch rest of course as using api means using jquery. Not yet ready!  ~
+ 
+----------------(Brain storm)-----------------------
+* send data to controller through html without refresh and use callapse to cascade on to the next drop
 
 ----------------(All pages)-----------------------
 

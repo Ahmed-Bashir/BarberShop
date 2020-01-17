@@ -56,6 +56,24 @@ namespace BarberShop.Migrations
                         });
                 });
 
+            modelBuilder.Entity("BarberShop.Models.Calendar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Days")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Month")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Calendar");
+                });
+
             modelBuilder.Entity("BarberShop.Models.Cut", b =>
                 {
                     b.Property<int>("Id")

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Barber_shop.Models;
@@ -11,6 +12,8 @@ namespace BarberShop.Controllers
     public class MenuController : Controller
     {
         private BarberShopDbContext _context;
+
+       
         public MenuController(BarberShopDbContext context)
         {
             _context = context;
@@ -19,12 +22,17 @@ namespace BarberShop.Controllers
         {
             var barbers = _context.Barbers.ToList();
             var cuts = _context.Cuts.ToList();
+           
+            
+          
+
             var bookings = new Booking();
+
 
             var viewModel = new MenuViewModel()
             {
                 Barbers = barbers,
-                Cuts = cuts,
+                Cuts = cuts
                
             };
 
@@ -36,11 +44,12 @@ namespace BarberShop.Controllers
         public IActionResult Create(Booking booking, Order orders)
         {
             var bookingDB = _context.Bookings.FirstOrDefault(b => b.CustomersId == 1);
+            
             var bookings = new Booking()
             {
                 Date = booking.Date,
                 CustomersId = 1,
-
+                
 
             };
 
@@ -59,7 +68,7 @@ namespace BarberShop.Controllers
 
 
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Menu");
         }
         
     }

@@ -16,5 +16,9 @@ namespace BarberShop.Models
         public Order Orders { get; set; }
 
         public Booking Booking { get; set; }
+
+        public Calendar Calendar { get; set; }
+         
+
     }
 }

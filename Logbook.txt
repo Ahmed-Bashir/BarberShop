@@ -19,5 +19,26 @@
         .OnDelete(DeleteBehavior.Restrict);
 * https://stackoverflow.com/questions/15021257/invalidoperationexception-sequence-contains-more-than-one-element
 * https://stackoverflow.com/questions/13443149/passing-data-from-form-without-html-helpers (passing data to controller using raw HTML)
+* <select asp-for="@Model.Orders.BarbersId" class="form-control">
+
+                                <option value="">Select a Barber</option>
+
+                                @foreach (var barber in Model.Barbers)
+                                {
+                                    if (barber.Name.Equals("Andre"))
+                                    {
+                                        <option disabled="disabled" value="@barber.Id">@barber.Name </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@barber.Id">@barber.Name </option>
+                                    }
+
+
+                                }
+                            </select>
+* https://stackoverflow.com/questions/315301/how-to-list-all-month-names-e-g-for-a-combo
+* https://stackoverflow.com/questions/4832468/getting-number-of-days-in-a-month/4832481
+* https://www.w3schools.com/asp/webpages_razor.asp
 
 

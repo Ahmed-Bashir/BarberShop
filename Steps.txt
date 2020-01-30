@@ -11,6 +11,7 @@
  
 ----------------(Brain storm)-----------------------
 * send data to controller through html without refresh and use callapse to cascade on to the next drop
+* test link to see if submits but also uncallapses 
 
 ----------------(All pages)-----------------------
 

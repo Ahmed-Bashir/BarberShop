@@ -28,12 +28,15 @@ namespace BarberShop.Controllers
 
             var bookings = new Booking();
 
+            var calender = new Models.Calendar();
+
 
             var viewModel = new MenuViewModel()
             {
                 Barbers = barbers,
-                Cuts = cuts
-               
+                Cuts = cuts,
+                Calendar = calender
+
             };
 
                 

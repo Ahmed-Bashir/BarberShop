@@ -8,6 +8,7 @@ using BarberShop.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,9 +39,10 @@ namespace BarberShop
             var mapper = config.CreateMapper();
            
             services.AddSingleton(mapper);
-         
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<BarberShopDbContext>();
+            
 
-           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
